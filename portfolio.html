@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Portfolio</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header {
+    background-color: black ;
+    background-size: 800% 800%;
+    
+    padding: 20px 0;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header .neon {
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.neon {
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+.neon-input {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    border: none;
+    background-color: #333;
+    color: #0ff;
+    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+}
+
+.neon-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    background-color: #0ff;
+    color: #0d0d0d;
+    cursor: pointer;
+    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+}
+
+.neon-button:hover {
+    background-color: #0ff;
+    color: #333;
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.project {
+    width: 30%;
+    padding: 20px;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+}
+footer{background: linear-gradient(270deg, #1a1a1a, #0d0d0d, #1a1a1a, #0d0d0d);
+    background-size: 800% 800%;
+    animation: backgroundAnimation 10s ease infinite;
+    padding: 20px 0;}
+
+    </style>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('nav ul li a');
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const target = document.querySelector(event.target.getAttribute('href'));
+                window.scrollTo({
+                    top: target.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="neon">My Portfolio</h1>
+            <img src="156fbb01d3ec2f7ea869e06bf34351dc.jpg" height="200px" alt="Logo" class="logo" >
+            <nav>
+                <ul>
+                    <li><a href="#about" class="neon">About</a></li>
+                    <li><a href="#projects" class="neon">Projects</a></li>
+                    <li><a href="#contact" class="neon">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2 class="neon">About Me</h2>
+        <p class="neon">I am Currently doing my bachelor in comouter science and technology from LNCT&S. </p>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 class="neon">Projects</h2>
+        <div class="project-list">
+            <div class="project neon">Project 1</div>
+            <div class="project neon">Project 2</div>
+            <div class="project neon">Project 3</div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2 class="neon">Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" class="neon-input">
+            <input type="email" placeholder="Your Email" class="neon-input">
+            <textarea placeholder="Your Message" class="neon-input"></textarea>
+            <button type="submit" class="neon-button">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p class="neon" style="margin-left: 45% ;">© 2024 My  Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
